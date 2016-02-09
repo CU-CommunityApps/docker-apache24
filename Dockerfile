@@ -1,4 +1,4 @@
-FROM docker.cucloud.net/base
+FROM dtr.cucloud.net/cs/base
 
 # File Author / Maintainer
 MAINTAINER Shawn Bower <shawn.bower@gmail.com>
@@ -15,12 +15,12 @@ COPY lib/libcom_err.so.3 /lib/libcom_err.so.3
 COPY lib/mod_cuwebauth.so /usr/lib/apache2/modules/mod_cuwebauth.so
 
 # turn on mods
-RUN \ 
+RUN \
   a2enmod ssl \
   cuwebauth \
   rewrite \
   proxy \
-  proxy_http 
+  proxy_http
 
 EXPOSE 80
 EXPOSE 443
