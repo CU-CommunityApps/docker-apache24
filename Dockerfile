@@ -1,12 +1,9 @@
 FROM dtr.cucloud.net/cs/base
 
-# File Author / Maintainer
-MAINTAINER Shawn Bower <shawn.bower@gmail.com>
-
 # Install.
 RUN \
   apt-get update && \
-  apt-get install -y apache2 && \
+  DEBIAN_FRONTEND=noninteractive apt-get install -y apache2 && \
   apt-get clean
 
 #copy files needed for CUWA
