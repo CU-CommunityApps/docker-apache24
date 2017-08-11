@@ -15,7 +15,7 @@ Prior to running `go.sh`, you need to obtain a copy of the CUWebAuth source code
 
 # Test suite
 
-As part of running an image build via `bin/go.sh`, a series of quick validation tests are performed on the new image before exiting cleanly.  This is accomplished by giving the new image a specific tag ':test-build' and launching the image as a new Docker container so we can run `bin/run-tests.sh`.
+As part of running an image build via `bin/go.sh`, a series of quick validation tests are performed on the new image before exiting cleanly.  This is accomplished by giving the new image a specific tag (`:test-build`) and launching the image as a new Docker container so we can run `bin/run-tests.sh`.
 
 The tests performed in `bin/run-tests.sh` are fairly basic but include:
 
@@ -24,6 +24,8 @@ The tests performed in `bin/run-tests.sh` are fairly basic but include:
  - Testing enabling and disabling Apache modules.
  - Testing basic index page load.
  - Verifying requests for CUWebAuth-secured content are being redirected to the weblogin servers.
+
+Any test failures should result in a non-zero exit from both `run-tests.sh` and `go.sh`.  By not tagging the image with the default `latest` indicator, any attempt to push the image downstream should fail (or result in a re-push of a previous version).  To be sure, always check the exit code from `go.sh` before moving on with your image publishing processes.
 
 
 # Building mod_cuwebauth
