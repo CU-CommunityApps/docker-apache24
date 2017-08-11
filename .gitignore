@@ -1,3 +1,6 @@
 *~
 \#*#
 .#*
+.*.swp
+cuwal-src/cuwal*.tar.gz
+lib/mod_cuwebauth.so
