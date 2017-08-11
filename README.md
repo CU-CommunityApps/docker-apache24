@@ -8,7 +8,7 @@ This image is built upon [CU-CommunityApps/docker-base](https://github.com/CU-Co
 The included `bin/go.sh` script will run through building mod_cuwebauth.so, creating the image and running a basic set of tests on the result.  Two environment variables are required to be set:
 
  - **CUWA_VERSION** -- The version of CUWebAuth being built (ie: 2.3.0.238)
- - **DOCKER_IMG** -- The label for the resulting Docker image (ie: dtr.cucloud.net/cs/apache22-official)
+ - **DOCKER_IMG** -- The label for the resulting Docker image (ie: dtr.cucloud.net/cs/apache24)
 
 Prior to running `go.sh`, you need to obtain a copy of the CUWebAuth source code from Identity Management and place it in the `cuwal-src/` directory (ie: `cuwal-src/cuwal-${CUWA_VERSION}.tar.gz`).  
 
