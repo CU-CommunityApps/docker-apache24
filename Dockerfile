@@ -21,6 +21,9 @@ RUN \
   proxy \
   proxy_http
 
+# Add test suite to image
+COPY bin/run-tests.sh /root/test-suite/
+
 EXPOSE 80
 EXPOSE 443
 
