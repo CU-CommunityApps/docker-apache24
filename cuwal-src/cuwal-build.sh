@@ -5,6 +5,8 @@ set -e
 tar zxf cuwal-${CUWA_VERSION}.tar.gz
 cd cuwal-${CUWA_VERSION}
 
+autoconf
+
 # Disable use of format-security warnings as errors on Ubuntu 14.04
 if [[ -f /usr/share/apache2/build/config_vars.mk ]] && [[ -f ../config_vars.mk.patch ]]; then
     patch /usr/share/apache2/build/config_vars.mk -f -i ../config_vars.mk.patch -l -r -
